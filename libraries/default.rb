@@ -33,8 +33,8 @@ module Opscode
       # Otherwise, we can just render it nicely as Erlang wants. This
       # theoretically opens the door for arbitrary kernel_app parameters to be
       # declared.
-      kernel.select { |_k, v| !v.nil? }.each_pair do |param, val|
-        rendered << "{#{param}, #{val}}"
+      kernel.select { |_k, v| !v.nil? }.each_pair do |parameter, val|
+        rendered << "{#{parameter}, #{val}}"
       end
 
       rendered.each { |r| r.prepend('    ') }.join(",\n")
